@@ -1103,8 +1103,8 @@ function handlePpdbSubmit(event) {
                   `Mohon informasi untuk tahapan pendaftaran selanjutnya. Terima kasih.`;
 
     // 4. Membuka link WhatsApp
-    const urlWa = `https://wa.me/${nomerAdmin}?text=${encodeURI(pesan)}`;
-    window.open(urlWa, '_blank');
+    const urlWa = `https://wa.me/${nomerAdmin}?text=${encodeURIComponent(pesan)}`;
+    window.location.href = urlWa;
 }
 </script>
     </section>
