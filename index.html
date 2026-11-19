@@ -1086,7 +1086,7 @@ function handlePpdbSubmit(event) {
     event.preventDefault(); // Mencegah halaman reload
 
     // 1. GANTI NOMOR WHATSAPP ADMIN DI BAWAH INI (Gunakan kode negara 62)
-    const nomorAdmin = "085738873845"; 
+    const nomorAdmin = "6285738873845"; 
 
     // 2. Mengambil data dari input form
     const nama = document.getElementById("santri-name").value;
@@ -1103,7 +1103,7 @@ function handlePpdbSubmit(event) {
                   `Mohon informasi untuk tahapan pendaftaran selanjutnya. Terima kasih.`;
 
     // 4. Membuka link WhatsApp
-    const urlWa = `https://wa.me/085738873845?text=${pesan}`;
+    const urlWa = `https://wa.me/${nomerAdmin}?text=${encodeURI(pesan)}`;
     window.open(urlWa, '_blank');
 }
 </script>
