@@ -1089,21 +1089,22 @@ function handlePpdbSubmit(event) {
     const nomorAdmin = "6281398933722"; 
 
     // 2. Mengambil data dari input form
-    const nama = document.getElementById("santri-name").value;
+    const nama = document.getElementById("santri-name").value.trim();
     const jenjang = document.getElementById("santri-level").value;
     const kelamin = document.getElementById("santri-gender").value;
-    const noWali = document.getElementById("santri-phone").value;
+    const noWali = document.getElementById("santri-phone").value.trim();
 
     // 3. Menyusun format pesan WhatsApp
-    const pesan = `Assalamu'alaikum Admin PPDB,%0A%0ASaya ingin mendaftarkan calon santri baru dengan data berikut:%0A` +
-                  `*Nama Lengkap:* ${encodeURIComponent(nama)}%0A` +
-                  `*Jenjang:* ${encodeURIComponent(jenjang)}%0A` +
-                  `*Jenis Kelamin:* ${encodeURIComponent(kelamin)}%0A` +
-                  `*No. WA Wali:* ${encodeURIComponent(noWali)}%0A%0A` +
+    const pesan = `Assalamu'alaikum Admin PPDB Pon Pes API Sabilul Muttaqin,\n\n` +
+                  `Saya ingin mendaftarkan calon santri baru dengan data berikut:\n` +
+                  `*Nama Lengkap:* ${nama}\n` +
+                  `*Jenjang:* ${jenjang}\n` +
+                  `*Jenis Kelamin:* ${kelamin}\n` +
+                  `*No. WA Wali:* ${noWali}\n\n` +
                   `Mohon informasi untuk tahapan pendaftaran selanjutnya. Terima kasih.`;
 
     // 4. Membuka link WhatsApp
-    const urlWa = `https://wa.me/${nomerAdmin}?text=${encodeURIComponent(pesan)}`;
+    const urlWa = `https://wa.me/${nomorAdmin}?text=${encodeURIComponent(pesan)}`;
     window.location.href = urlWa;
 }
 </script>
@@ -1330,15 +1331,6 @@ function handlePpdbSubmit(event) {
             setTimeout(() => {
                 toast.classList.add('translate-y-32', 'opacity-0');
             }, 4500);
-        }
-
-        // PPDB Submission Handler
-        function handlePpdbSubmit(event) {
-            event.preventDefault();
-            const name = document.getElementById('santri-name').value;
-            const level = document.getElementById('santri-level').value;
-            showToast('Pendaftaran Berhasil!', `Alhamdulillah, data ananda ${name} untuk program ${level} di Pon Pes API Sabilul Muttaqin telah tercatat. Tim admin PPDB akan segera menghubungi via WhatsApp.`);
-            document.getElementById('ppdb-form').reset();
         }
     </script>
 </body>
